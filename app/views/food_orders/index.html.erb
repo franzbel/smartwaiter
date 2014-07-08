@@ -1,0 +1,35 @@
+<h1>Listing food_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>State</th>
+      <th>Takeaway</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @food_orders.each do |food_order| %>
+      <tr>
+        <td><%= food_order.name %></td>
+        <td><%= food_order.quantity %></td>
+        <td><%= food_order.price %></td>
+        <td><%= food_order.state %></td>
+        <td><%= food_order.takeaway %></td>
+        <td><%= link_to 'Show', food_order %></td>
+        <td><%= link_to 'Edit', edit_food_order_path(food_order) %></td>
+        <td><%= link_to 'Destroy', food_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Food order', new_food_order_path %>

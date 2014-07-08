@@ -1,0 +1,18 @@
+
+<div id="midiv">
+	<% @mesas.each do |mesa|%>
+
+			<%= audio_tag("beep1.wav", autoplay: true) %>
+
+		<%= image_tag("#{mesa.id}.png") %>
+		<%= link_to 'Listo', clean_tables_path(mesa) %><br>
+	<% end %>
+</div>
+<script type="text/javascript">
+  $(document).ready(
+      function(){
+        setInterval(function(){
+          $('#midiv').load('/helper/index');
+      }, 16000);
+    });
+</script>

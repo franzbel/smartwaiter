@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @food_order.name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @food_order.quantity %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @food_order.price %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @food_order.state %>
+</p>
+
+<p>
+  <strong>Takeaway:</strong>
+  <%= @food_order.takeaway %>
+</p>
+
+<%= link_to 'Edit', edit_food_order_path(@food_order) %> |
+<%= link_to 'Back', food_orders_path %>

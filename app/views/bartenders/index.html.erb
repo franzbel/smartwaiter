@@ -1,0 +1,34 @@
+<table id="mitabla">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Para llevar</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pedidos.each do |pedido| %>
+      <tr>
+        <% comida=pedido.foods %>
+        <% comida.each do |comida| %>
+          <% if comida.product_type == 'bebida'%>
+	          <td><%= comida.name%></td>  
+	          <td><%= pedido.quantity %></td>
+	          <td><%= link_to 'listo', drink_delivery_path(pedido) %></td>
+	      <%end%>
+        <% end%>     
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<script type="text/javascript">
+  $(document).ready(
+      function(){
+        setInterval(function(){
+          $('#mitabla').load('/bartenders/index');
+      }, 16000);
+    });
+</script>
