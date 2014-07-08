@@ -1,6 +1,17 @@
 Smartwaiter::Application.routes.draw do
 
+  devise_for :users
   root 'welcome#index'
+  
+  
+  get "waiter/index"
+   get "/waiters/index"
+  get '/bartenders/index'
+  get '/homes/index'
+  get '/chefs/index'
+  get "/helper/index"
+  get '/managers/index' 
+  get '/users/sign_up' => 'devise/sessions#new'
   get "helper/index"
   get "helper/clean_table/:id" => "helper#clean_table", :as => 'clean_tables'
   get "managers/index"
